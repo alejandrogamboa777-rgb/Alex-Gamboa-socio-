@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SignaFen · Asesoría Patrimonial Independiente — Mérida</title>
+<meta name="description" content="Asesoría patrimonial independiente para dueños de negocios en Mérida. Arquitectura abierta, análisis y ejecución. Agenda 30 minutos con Alejandro Gamboa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#06141E; --ink2:#0B2230; --ink3:#123141;
+  --paper:#F5F3EE; --paper2:#ECE8DF;
+  --brass:#C2924A; --brass-d:#A87A38;
+  --sage:#8AA09B; --line:rgba(245,243,238,.14);
+  --ink-text:#13242E; --muted:#5C6B6E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink-text);font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:"Bricolage Grotesque",sans-serif;line-height:1.04;letter-spacing:-.02em}
+.eyebrow{font-family:"Inter",sans-serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+a{color:inherit}
+
+/* NAV */
+nav{position:absolute;top:0;left:0;right:0;z-index:10}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;max-width:1120px;margin:0 auto}
+.nav-logo img{height:26px;display:block}
+.nav-cta{font-family:"Inter",sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--paper);border:1px solid var(--line);padding:9px 18px;border-radius:100px;text-decoration:none;transition:.25s}
+.nav-cta:hover{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;padding:150px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero .eyebrow{color:var(--brass);margin-bottom:26px}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:700;color:var(--paper)}
+.hero h1 em{font-style:normal;color:var(--brass)}
+.hero p.lead{font-size:clamp(19px,2.2vw,22px);color:#C9D2CF;max-width:30ch;margin:26px 0 36px;font-weight:400}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;text-decoration:none;border-radius:100px;padding:15px 28px;display:inline-block;transition:.25s}
+.btn-primary{background:var(--brass);color:var(--ink)}
+.btn-primary:hover{background:#D6A75C;transform:translateY(-2px)}
+.btn-ghost{color:var(--paper);border:1px solid var(--line);padding:14px 24px}
+.btn-ghost:hover{border-color:var(--sage)}
+
+/* ORBIT — signature element */
+.orbit{position:relative;aspect-ratio:1;max-width:430px;margin:0 auto;width:100%}
+.orbit svg{width:100%;height:100%;overflow:visible}
+.ring{fill:none;stroke:var(--line);stroke-width:1}
+.orb-dot{fill:var(--ink3);stroke:var(--brass);stroke-width:1.5}
+.orb-label{font-family:"Inter",sans-serif;font-size:11px;font-weight:600;fill:#C9D2CF;letter-spacing:.04em}
+.core{fill:var(--brass)}
+.core-ring{fill:none;stroke:var(--brass);stroke-width:1.5;opacity:.5}
+.core-label{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;font-weight:700;fill:var(--ink);letter-spacing:-.01em}
+.spin{transform-origin:50% 50%;animation:spin 60s linear infinite}
+.spin-r{transform-origin:50% 50%;animation:spin 90s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit-cap{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);text-align:center;margin-top:18px}
+
+/* SECTIONS */
+.sec{padding:96px 0}
+.sec-paper{background:var(--paper)}
+.sec-paper2{background:var(--paper2)}
+.sec-ink{background:var(--ink);color:var(--paper)}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec .eyebrow{color:var(--brass-d);display:block;margin-bottom:18px}
+.sec-ink .eyebrow{color:var(--brass)}
+.sec h2{font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--ink)}
+.sec-ink h2{color:var(--paper)}
+.sec-head p{color:var(--muted);font-size:20px;margin-top:18px}
+.sec-ink .sec-head p{color:#B7C2BF}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.08)}
+.pillar{background:var(--paper);padding:36px 30px}
+.pillar .n{font-family:"Inter",sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--brass-d)}
+.pillar h3{font-size:23px;font-weight:700;margin:16px 0 12px;color:var(--ink)}
+.pillar p{font-size:17px;color:var(--muted);line-height:1.55}
+
+/* AUDIENCE */
+.aud{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.aud ul{list-style:none;margin-top:10px}
+.aud li{padding:18px 0;border-top:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+.aud li:last-child{border-bottom:1px solid var(--line)}
+.aud li .mk{color:var(--brass);font-family:"Inter",sans-serif;font-size:13px;font-weight:600;flex:none}
+.aud li span.t{color:#DDE3E1;font-size:18px}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:10px}
+.step{position:relative;padding-top:26px;border-top:2px solid var(--brass)}
+.step .s{font-family:"Bricolage Grotesque",sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--brass-d);text-transform:uppercase}
+.step h3{font-size:21px;font-weight:700;color:var(--ink);margin:12px 0 10px}
+.step p{font-size:16px;color:var(--muted)}
+
+/* CRED */
+.cred{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.chip{font-family:"Inter",sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;color:#DDE3E1;border:1px solid var(--line);border-radius:100px;padding:10px 20px}
+.chip b{color:var(--brass);font-weight:600}
+
+/* CTA */
+.cta{background:var(--ink);color:var(--paper);text-align:center;padding:110px 0}
+.cta h2{font-size:clamp(30px,5vw,52px);font-weight:700;color:var(--paper);max-width:18ch;margin:0 auto 14px}
+.cta h2 em{font-style:normal;color:var(--brass)}
+.cta p{color:#B7C2BF;font-size:20px;max-width:46ch;margin:0 auto 38px}
+.cta-contact{margin-top:34px;font-family:"Inter",sans-serif;font-size:14px;color:var(--sage);letter-spacing:.02em}
+.cta-contact a{color:#DDE3E1;text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* FOOTER */
+footer{background:#040E15;color:#8A9794;padding:46px 0}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot-in img{height:24px;opacity:.85}
+.foot-meta{font-family:"Inter",sans-serif;font-size:13px;line-height:1.7;text-align:right}
+.foot-meta b{color:#C2CCC9;font-weight:600}
+
+@media (max-width:860px){
+  .hero{padding:120px 0 70px}
+  .hero-grid,.aud{grid-template-columns:1fr;gap:48px}
+  .orbit{max-width:340px;order:-1}
+  .pillars,.steps{grid-template-columns:1fr}
+  .foot-in{flex-direction:column;text-align:center}
+  .foot-meta{text-align:center}
+}
+@media (prefers-reduced-motion:reduce){.spin,.spin-r{animation:none}}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <a class="nav-logo" href="#"><img src="data:image/png;base64,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" alt="SignaFen"></a>
+  <a class="nav-cta" href="#agenda">Agenda 30 min</a>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Asesoría Patrimonial Independiente · Mérida, Yucatán</span>
+      <h1>Tu patrimonio merece un asesor sin <em>agenda de producto.</em></h1>
+      <p class="lead">Asesoría independiente para dueños de negocios. Análisis, ejecución y una sola lealtad: la tuya.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#agenda">Agenda una llamada de 30 min</a>
+        <a class="btn btn-ghost" href="#enfoque">Cómo trabajo</a>
+      </div>
+    </div>
+    <div>
+      <div class="orbit">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Arquitectura abierta: tu patrimonio al centro, conectado a múltiples instituciones">
+          <circle class="ring" cx="200" cy="200" r="100"/>
+          <circle class="ring" cx="200" cy="200" r="160"/>
+          <g class="spin">
+            <g class="orb"><circle class="orb-dot" cx="200" cy="100" r="30"/><text class="orb-label" x="200" y="104" text-anchor="middle">GBM</text></g>
+            <g class="orb"><circle class="orb-dot" cx="287" cy="250" r="30"/><text class="orb-label" x="287" y="254" text-anchor="middle">ETFs</text></g>
+            <g class="orb"><circle class="orb-dot" cx="113" cy="250" r="30"/><text class="orb-label" x="113" y="254" text-anchor="middle">Fondos</text></g>
+          </g>
+          <g class="spin-r">
+            <g class="orb"><circle class="orb-dot" cx="360" cy="200" r="26"/><text class="orb-label" x="360" y="204" text-anchor="middle">USD</text></g>
+            <g class="orb"><circle class="orb-dot" cx="40" cy="200" r="26"/><text class="orb-label" x="40" y="204" text-anchor="middle">FX</text></g>
+          </g>
+          <circle class="core-ring" cx="200" cy="200" r="58"/>
+          <circle class="core" cx="200" cy="200" r="48"/>
+          <text class="core-label" x="200" y="196" text-anchor="middle">Tu</text>
+          <text class="core-label" x="200" y="214" text-anchor="middle">patrimonio</text>
+        </svg>
+        <p class="orbit-cap">Arquitectura abierta</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec sec-paper" id="enfoque">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">El enfoque</span>
+      <h2>Independiente significa que solo respondo ante ti.</h2>
+      <p>No vendo el producto de una sola casa. Selecciono entre custodios y gestores según lo que conviene a tu patrimonio, y me concentro en lo que mueve la aguja: análisis y ejecución.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="n">01 · ARQUITECTURA ABIERTA</div>
+        <h3>Los mejores vehículos del mercado</h3>
+        <p>No te limito a una sola casa. Busco los mejores instrumentos disponibles —ETFs o fondos externos de Banorte, Scotiabank, Santander, y gestores globales como Franklin Templeton, JP Morgan o Vanguard— y elijo según lo que conviene a tu patrimonio.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">02 · ANÁLISIS Y EJECUCIÓN</div>
+        <h3>Decisiones, no folletos</h3>
+        <p>Mi fortaleza es el análisis de inversiones y la ejecución disciplinada. Niveles concretos, tesis claras y seguimiento, en lugar de planeación genérica.</p>
+      </div>
+      <div class="pillar">
+        <div class="n">03 · PAGOS INTERNACIONALES</div>
+        <h3>Corredor MXN → USD para importadores</h3>
+        <p>Si importas, mueves dólares de forma más ágil y transparente que con la banca tradicional. Un servicio pensado para la operación de tu negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-ink">
+  <div class="wrap aud">
+    <div class="sec-head" style="margin:0">
+      <span class="eyebrow">Para quién</span>
+      <h2>Para dueños de negocios y empresarios.</h2>
+      <p>Trabajo con un número limitado de familias y empresarios que quieren un asesor cercano, no un call center.</p>
+    </div>
+    <ul>
+      <li><span class="mk">→</span><span class="t">Empresarios con excedente de tesorería que rinde poco en el banco.</span></li>
+      <li><span class="mk">→</span><span class="t">Dueños de negocio que importan y necesitan mover divisas con eficiencia.</span></li>
+      <li><span class="mk">→</span><span class="t">Familias que quieren consolidar inversiones dispersas en distintas casas.</span></li>
+      <li><span class="mk">→</span><span class="t">Quien busca exposición a mercados de EE. UU. con criterio profesional.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec-paper2">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cómo empezamos</span>
+      <h2>Una conversación de 30 minutos, sin compromiso.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="s">Paso 01</div><h3>Diagnóstico</h3><p>Me cuentas tu situación: qué tienes, dónde y qué buscas. Yo escucho y pregunto.</p></div>
+      <div class="step"><div class="s">Paso 02</div><h3>Propuesta</h3><p>Te presento cómo estructuraría tu patrimonio y qué cambiaría, con números claros.</p></div>
+      <div class="step"><div class="s">Paso 03</div><h3>Ejecución</h3><p>Si tiene sentido para ti, lo implementamos y le damos seguimiento continuo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-ink">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:30px">
+      <span class="eyebrow">Quién está detrás</span>
+      <h2>Alejandro Gamboa Oropeza</h2>
+      <p>Socio fundador de SignaFen y asesor patrimonial afiliado a GBM, con más de 15 años de trayectoria en el mercado de valores y docente a nivel posgrado en universidades reconocidas de Mérida, Yucatán. Me mueve la cultura financiera y una orientación cercana a cada cliente: alinear tu patrimonio con tus objetivos y ejecutarlo con disciplina.</p>
+    </div>
+    <div class="cred">
+      <div class="chip"><b>Trayectoria</b> · +15 años en el mercado de valores</div>
+      <div class="chip"><b>Docente</b> · posgrado en universidades de Mérida</div>
+      <div class="chip"><b>Asesor afiliado</b> · GBM</div>
+      <div class="chip"><b>Certificación</b> · AMIB</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="agenda">
+  <div class="wrap">
+    <h2>Hablemos de tu <em>patrimonio.</em></h2>
+    <p>30 minutos, sin costo y sin compromiso. Salimos con claridad sobre tu siguiente paso.</p>
+    <a class="btn btn-primary" href="https://wa.me/529999692825?text=Hola%20Alejandro,%20quiero%20agendar%2030%20minutos." target="_blank" rel="noopener">Agenda por WhatsApp</a>
+    <div class="cta-contact">
+      o escríbeme a <a href="mailto:agamboao@afa.gbm.com">agamboao@afa.gbm.com</a> · <a href="tel:+529999692825">999 969 2825</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <img src="data:image/png;base64,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" alt="SignaFen">
+    <div class="foot-meta">
+      <b>Alejandro Gamboa Oropeza</b> · Socio fundador<br>
+      agamboao@afa.gbm.com · 999 969 2825 · Mérida, Yucatán<br>
+      Asesor patrimonial afiliado a GBM
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
